@@ -1,0 +1,45 @@
+  <%- include('includes/header.ejs') %>
+
+    <% if (data.length > 0) { %>
+      
+         <div class="bg-white">
+  <div class="mx-auto max-w-7xl py-12 px-6 lg:px-8 lg:py-24">
+    <div class="space-y-12">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Listing of all products</h2>
+
+          <ul role="list" class="space-y-12  lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0">
+      <% for (let i=0; i<data.length; i++) { %> 
+        <!-- <h1>cool</h1> -->
+           <li>
+          <div class="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
+            <div class="aspect-w-3 aspect-h-2 h-0 sm:aspect-w-3   sm:aspect-h-4">
+              <img class="rounded-lg object-cover hover:scale-105 transition-all cursor-pointer shadow-lg" src="<%= data[i]?.product_url  %>" alt="No Image">
+            </div>
+            <div class="sm:col-span-2">
+              <div class="space-y-4">
+                <div class="space-y-1 text-lg font-medium leading-6">
+                  <h3 class="font-bold"><%= data[i]?.product_name %></h3>
+                  <p class="text-green-600 underline text-xs">In Stock </p>
+                </div>
+                <div class="text-lg">
+                  <p class="text-gray-500 font-light text-sm"><%= data[i]?.product_description%></p>
+                </div>
+                <div class="">
+                <a href="/admin/listing/<%= data[i]._id  %>" class="px-5 py-1 bg-rose-600 text-sm text-white rounded-lg hover:bg-rose-700 focus:ring-1 focus:ring-rose-700">View</a>
+                <a href="#" class="px-3 py-1 bg-indigo-600 text-sm text-white rounded-lg hover:bg-indigo-700 focus:ring-1 focus:ring-indigo-700">Wishlist </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <% } %>
+    </ul>
+     </div>
+  </div>
+</div>
+   <%  } else { %>
+         <h1>No products</h1>
+         <% } %>
+
+ <%- include('includes/footer.ejs') %>

@@ -1,0 +1,17 @@
+  <%- include('includes/header.ejs') %>
+  
+  <div class="max-w-6xl mx-auto ">
+    <form method="post" action="/admin/product" class="max-w-xl shadow-md p-4 ring-1 ring-gray-100  mx-auto  flex flex-col gap-y-4 " >
+      <h1 class="block mx-auto">Enter Product Info</h1>
+        <input type="text" class="px-3 block py-1 w-64 mx-auto rounded-lg ring-1 ring-gray-300" name="title" placeholder="Product Name: " id="">
+        <input type="text" class="px-3 block py-1 w-64 mx-auto rounded-lg ring-1 ring-gray-300" name="description" placeholder="Description: " id="">
+        <input type="text" class="px-3 block py-1 w-64 mx-auto rounded-lg ring-1 ring-gray-300" name="url" placeholder="url: " id="">
+        <button class="px-4 py-1 bg-indigo-500 text-white block mx-auto rounded-lg" type="submit">add product</button>
+    </form> 
+  </div>
+    
+
+
+    
+ 
+ <%- include('includes/footer.ejs') %>
